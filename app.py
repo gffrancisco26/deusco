@@ -2,11 +2,21 @@ import streamlit as st
 import pandas as pd
 import fitz  # PyMuPDF
 from openai import OpenAI
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+
+if not api_key:
+    st.error("OpenAI API key not found. Please add it to .env")
+    st.stop()
 
 # Initialize OpenAI client
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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",
+    api_key=api_key,
 )
 
 EXTRA_HEADERS = {
