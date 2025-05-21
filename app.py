@@ -7,7 +7,7 @@ import os
 
 # Load environment variables from .env
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+api_key = st.secrets.get("OPENROUTER_API_KEY")
 
 if not api_key:
     st.error("OpenAI API key not found. Please add it to .env")
