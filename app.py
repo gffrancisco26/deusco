@@ -4,7 +4,7 @@ import fitz  # PyMuPDF
 from openai import OpenAI
 
 # Your API key hardcoded here
-api_key = "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"
+api_key = "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"
 
 if not api_key:
     st.error("❌ OpenRouter API key not found. Please add it.")
